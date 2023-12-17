@@ -57,3 +57,11 @@ module "warehouse" {
   statement_timeout_in_seconds        = each.value.statement_timeout_in_seconds
 }
 
+module "roles" {
+  for_each = var.roles
+
+  source = "./modules/role"
+
+  name    = var.enforce_style ? upper("${var.env}_${each.value.name}_ROLE") : each.value.name
+  comment = each.value.comment
+}

@@ -60,3 +60,12 @@ variable "warehouses" {
   }))
   default = {}
 }
+
+variable "roles" {
+  description = "A map of roles to create"
+  type = map(object({
+    name    = string
+    comment = optional(string)
+  }))
+  default = {}
+}

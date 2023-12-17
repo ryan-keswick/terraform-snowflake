@@ -27,5 +27,29 @@ module "snowflake" {
       comment = "Used by Fivetran to load data into Snowflake"
       size    = "XSMALL"
     }
+
+    transforming = {
+      name    = "transforming"
+      comment = "Used by the dbt role to transform data in Snowflake"
+      size    = "XSMALL"
+    }
+
+    metabase = {
+      name    = "metabase"
+      comment = "Used by Metabase to query data in Snowflake"
+      size    = "XSMALL"
+    }
+  }
+
+  roles = {
+    fivetran = {
+      name    = "fivetran"
+      comment = "A role for Fivetran to use when loading data into Snowflake"
+    }
+
+    transformer = {
+      name    = "dbt"
+      comment = "A role for dbt to use when transforming data in Snowflake"
+    }
   }
 }
