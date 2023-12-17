@@ -20,4 +20,12 @@ module "snowflake" {
       data_retention_time_in_days = 1
     }
   }
+
+  warehouses = {
+    loading = {
+      name    = "loading"
+      comment = "Used by Fivetran to load data into Snowflake"
+      size    = "XSMALL"
+    }
+  }
 }
