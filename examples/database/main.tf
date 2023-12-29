@@ -53,3 +53,7 @@ module "snowflake" {
     }
   }
 }
+
+output "debug" {
+  value = module.snowflake
+}
