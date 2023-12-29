@@ -1,3 +1,9 @@
+variable "create_database" {
+  description = "Whether to create the database"
+  type        = bool
+  default     = true
+}
+
 variable "name" {
   description = "The name of the database"
   type        = string
@@ -20,3 +26,5 @@ variable "is_transient" {
   type        = bool
   default     = null
 }
+
+

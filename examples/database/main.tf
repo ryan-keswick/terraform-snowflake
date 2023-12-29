@@ -23,18 +23,18 @@ module "snowflake" {
 
   warehouses = {
     loading = {
-      name    = "loading"
+      name    = "fivetran"
       comment = "Used by Fivetran to load data into Snowflake"
       size    = "XSMALL"
     }
 
     transforming = {
-      name    = "transforming"
+      name    = "dbt"
       comment = "Used by the dbt role to transform data in Snowflake"
       size    = "XSMALL"
     }
 
-    metabase = {
+    reporting = {
       name    = "metabase"
       comment = "Used by Metabase to query data in Snowflake"
       size    = "XSMALL"
@@ -42,7 +42,7 @@ module "snowflake" {
   }
 
   roles = {
-    fivetran = {
+    reporter = {
       name    = "fivetran"
       comment = "A role for Fivetran to use when loading data into Snowflake"
     }
